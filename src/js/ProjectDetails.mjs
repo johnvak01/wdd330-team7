@@ -1,5 +1,5 @@
 import { setLocalStorage } from "./utils.mjs";
-import {addToCartHandler} from "./product.js";
+
 export default class ProductDetails {
     constructor(productId, dataSource) {
         this.productId = productId;
