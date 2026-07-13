@@ -26,6 +26,11 @@ export default class ProductDetails {
         productImage.alt = this.product.NameWithoutBrand;
       
         document.querySelector('.product-card__price').textContent = this.product.FinalPrice;
+        let discountText = "";
+        if (this.product.FinalPrice < this.product.SuggestedRetailPrice) {
+            discountText = `Save $${(this.product.SuggestedRetailPrice - this.product.FinalPrice).toFixed(2)}`;
+        }
+        document.querySelector('.product__discount').textContent = discountText;
         document.querySelector('.product__color').textContent = this.product.Colors[0].ColorName;
         document.querySelector('.product__description').innerHTML = this.product.DescriptionHtmlSimple;
       
