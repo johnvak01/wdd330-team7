@@ -25,12 +25,10 @@ export default class ProductDetails {
         productImage.src = this.product.Image;
         productImage.alt = this.product.NameWithoutBrand;
       
-        document.querySelector('.product-card__price').textContent = this.product.FinalPrice;
-        let discountText = "";
+        document.querySelector('.product-card__price').textContent = "$" + this.product.FinalPrice;
         if (this.product.FinalPrice < this.product.SuggestedRetailPrice) {
-            discountText = `Save $${(this.product.SuggestedRetailPrice - this.product.FinalPrice).toFixed(2)}`;
+            document.querySelector('.product-card__price').innerHTML += `<span class="product-card__price--sale">: Discounted ${((this.product.FinalPrice/this.product.SuggestedRetailPrice)*100).toFixed(0)}%!</span>`;
         }
-        document.querySelector('.product__discount').textContent = discountText;
         document.querySelector('.product__color').textContent = this.product.Colors[0].ColorName;
         document.querySelector('.product__description').innerHTML = this.product.DescriptionHtmlSimple;
       
