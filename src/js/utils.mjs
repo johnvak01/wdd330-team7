@@ -46,3 +46,9 @@ export function renderWithTemplate(template, parentElement, data, callback){
     callback(data);
   }
 }
+
+export async function loadTemplate(path){
+  const response = await fetch(path);
+  const template = await response.text();
+  return template;
+}
