@@ -52,3 +52,10 @@ export async function loadTemplate(path){
   const template = await response.text();
   return template;
 }
+
+export function loadHeaderFooter(){
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  renderWithTemplate("/templates/header.html", header);
+  renderWithTemplate("/templates/footer.html", footer);
+}
