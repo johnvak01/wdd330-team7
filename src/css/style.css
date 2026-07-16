@@ -241,6 +241,39 @@ button {
   grid-column: 3;
 }
 
+/* LOCATION  STYLES */
+#location-message {
+  background-color: #f4f8f2;
+  border: 1px solid #d6e8cf;
+  color: #2d5a27;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.location-denied {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid #d9534f;
+  border-radius: 8px;
+  background-color: #fff5f5;
+  margin: 1.5rem;
+}
+
+.location-denied h2 {
+  color: #d9534f;
+  margin-bottom: 1rem;
+}
+
+.location-denied p {
+  margin: 0.5rem 0;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
