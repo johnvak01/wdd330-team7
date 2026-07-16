@@ -1,6 +1,7 @@
 import Alert from "./alerts.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 
 const productData = new ProductData("tents");
 const alert = new Alert("/json/alerts.json");
@@ -13,3 +14,5 @@ const productList = new ProductList(
 );
 
 productList.init();
+
+loadHeaderFooter();
