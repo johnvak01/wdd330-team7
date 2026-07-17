@@ -11,8 +11,7 @@ function renderCartContents() {
     cartFooter.classList.remove("hide");
   }
   
-  const total = cartItems.reduce((sum, item) => {
-    return sum + item.FinalPrice;
+  const total = cartItems.reduce((sum, item) => {return sum + item.FinalPrice;
   }, 0);
 
   document.querySelector(".cart-total").innerHTML = `Total: $${total.toFixed(2)}`;
