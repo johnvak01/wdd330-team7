@@ -62,9 +62,18 @@
 
       <section class="products">
         <h2>Top Products</h2>
-        <ul class="product-list">
-        
-        </ul>
+
+        <select id="sort-products">
+          <option value="default">Sort Products by Name/Price (Default)</option>
+          <option value="name-az">Name A-Z</option>
+          <option value="name-za">Name Z-A</option>
+          <option value="name-random">Random Name</option>
+          <option value="price-low">Price Low-High</option>
+          <option value="price-high">Price High-Low</option>
+          <option value="price-random">Random Price</option>
+        </select>
+
+        <ul class="product-list"></ul>
       </section>
     </main>
     <footer>
