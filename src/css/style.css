@@ -246,6 +246,37 @@ button {
   display: none;
 }
 
+/* Product Sort Dropdown */
+#sort-products {
+  display: block;
+  margin: 1rem 0 1.5rem auto;
+  padding: 0.7rem 1rem;
+  min-width: 280px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #3b7a57;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#sort-products:hover {
+  border-color: #2f6247;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+#sort-products:focus {
+  outline: none;
+  border-color: #1f4d36;
+  box-shadow: 0 0 0 3px rgba(59, 122, 87, 0.25);
+}
+
+#sort-products option {
+  color: #333;
+  background: #fff;
+}
 
 @media screen and (min-width: 500px) {
   body {
@@ -267,7 +298,6 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
-
 
 /* alerts Style  */
 .alert-list p {
