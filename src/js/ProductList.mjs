@@ -9,7 +9,7 @@ function productCardTemplate(product) {
     <li class="product-card">
       <a href="product_pages/?product=${product.Id}">
         <img
-            src="${product.Image}"
+            src="${product.Images.PrimaryMedium}"
             alt="Image of ${product.NameWithoutBrand}"
         />
         <h3 class="card__brand">${product.Brand.Name}</h3>
@@ -29,7 +29,7 @@ export default class ProductList {
   }
 
   async init() {
-    const list = await this.dataSource.getData();
+    const list = await this.dataSource.getData(this.category);
     this.renderList(list);
     return list;
   }
