@@ -63,15 +63,34 @@
       <section class="products">
         <h2>Top Products</h2>
 
-        <select id="sort-products">
-          <option value="default">Sort Products by Name/Price (Default)</option>
-          <option value="name-az">Name A-Z</option>
-          <option value="name-za">Name Z-A</option>
-          <option value="name-random">Random Name</option>
-          <option value="price-low">Price Low-High</option>
-          <option value="price-high">Price High-Low</option>
-          <option value="price-random">Random Price</option>
-        </select>
+        <!-- products category  -->
+        <section class="categories">
+          <a href="/product_listing/?category=tents">
+            <img src="/images/category/category-tents.svg" alt="Tents" />
+            <h3>Tents</h3>
+          </a>
+
+          <a href="/product_listing/?category=sleeping-bags">
+            <img
+              src="/images/category/category-sleepingbags.svg"
+              alt="Sleeping Bags"
+            />
+            <h3>Sleeping Bags</h3>
+          </a>
+
+          <a href="/product_listing/?category=backpacks">
+            <img
+              src="/images/category/category-backpacks.svg"
+              alt="Backpacks"
+            />
+            <h3>Backpacks</h3>
+          </a>
+
+          <a href="/product_listing/?category=hammocks">
+            <img src="/images/category/category-hammocks.svg" alt="Hammocks" />
+            <h3>Hammocks</h3>
+          </a>
+        </section>
 
         <ul class="product-list"></ul>
       </section>
