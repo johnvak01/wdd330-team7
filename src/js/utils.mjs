@@ -60,6 +60,19 @@ export async function loadHeaderFooter(){
   const footerElement = document.querySelector("footer");
   const footerTemplate = await loadTemplate("/partials/footer.html");
   
+
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
+  
+  const cart_superscript = document.querySelector(".cart_superscript");
+
+  let cart = getLocalStorage("so-cart") || [];
+  console.log(cart.length);
+  if (cart.length > 0) {
+    cart_superscript.textContent = cart.length;
+  } else {
+    cart_superscript.textContent = "";
+    cart_superscript.classList.add("hide");
+  }  
+
 }
