@@ -1,15 +1,15 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
-function productCardTemplate(product) {
+function shoppingCartTemplate(product) {
   let discountText = "";
   if (product.FinalPrice < product.SuggestedRetailPrice) {
     discountText = "product with discount";
   }
   return `
-    <li class="product-card">
+    <li class="cart-card">
       <a href="product_pages/?product=${product.Id}">
         <img
-            src="${product.Images.PrimaryMedium}"
+            src="${product.Image}"
             alt="Image of ${product.NameWithoutBrand}"
         />
         <h3 class="card__brand">${product.Brand.Name}</h3>
@@ -21,7 +21,7 @@ function productCardTemplate(product) {
   `;
 } 
 
-export default class ProductList {
+export default class CartList {
   constructor(category, dataSource, listElement) {
     this.category = category;
     this.dataSource = dataSource;
@@ -29,14 +29,13 @@ export default class ProductList {
   }
 
   async init() {
-    const list = await this.dataSource.getData(this.category);
+    const list = await this.dataSource.getData();
     this.renderList(list);
-    return list;
   }
 
   renderList(productList) {
     renderListWithTemplate(
-      productCardTemplate,
+      shoppingCartTemplate,
       this.listElement,
       productList,
       "afterbegin",
