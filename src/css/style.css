@@ -246,6 +246,35 @@ button {
   display: none;
 }
 
+/* icons to categorize products */
+
+.category-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0;
+  margin: 1rem 0;
+  list-style: none;
+}
+
+.category-list li {
+  text-align: center;
+}
+
+.category-list img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 600px) {
+  .category-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* End icons to categorize products */
+
 /* Product Sort Dropdown */
 #sort-products {
   display: block;
