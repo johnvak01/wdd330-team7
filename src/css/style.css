@@ -246,6 +246,38 @@ button {
   display: none;
 }
 
+/* Remove from cart featura button X */
+.cart-card {
+  position: relative;
+}
+
+.remove-item {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background-color: springgreen;
+  color: #555;
+
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  color: #b00020;
+  background-color: transparent;
+}
+
 /* Product Sort Dropdown */
 #sort-products {
   display: block;
