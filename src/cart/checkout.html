@@ -52,39 +52,39 @@
   <main class="divider">
     <h2>Checkout</h2>
     <section id="form-checkout">
-      <form action="" method="Post">
+      <form action="" method="Post" name="checkout">
         <fieldset>
           <legend>Shipping Info</legend>
-          <label for="first-name">First Name: </label>
-          <input type="text" name="first-name" id="" placeholder="First Name" required />
+          <label for="fname">First Name: </label>
+          <input type="text" name="fname" id="" placeholder="First Name" required />
 
-          <label for="last-name">Last Name: </label>
-          <input type="text" name="last-name" id="" placeholder="Last Name" required />
+          <label for="lname">Last Name: </label>
+          <input type="text" name="lname" id="" placeholder="Last Name" required />
 
-          <label for="address-street">Street Address:</label>
-          <input type="text" name="" id="" placeholder="Address" required />
+          <label for="street">Street Address:</label>
+          <input type="text" name="street" id="" placeholder="Address" required />
 
-          <label for="address-city">City: </label>
-          <input type="text" name="address-city" id="" placeholder="City" required />
+          <label for="city">City: </label>
+          <input type="text" name="city" id="" placeholder="City" required />
 
-          <label for="address-state">State/Province: </label>
-          <input type="text" name="" id="" placeholder="State/Province" required />
+          <label for="state">State/Province: </label>
+          <input type="text" name="state" id="" placeholder="State/Province" required />
 
-          <label for="address-code">Postal Code</label>
-          <input type="text" name="address-code" id="" placeholder="Postal Code" required />
+          <label for="zip">Postal Code</label>
+          <input type="text" name="zip" id="zip" placeholder="Postal Code" required />
         </fieldset>
         <fieldset>
           <legend>Payment Info</legend>
-          <label for="pay-card">Credit Card Number</label>
-          <input type="number" name="pay-card" id="" placeholder="Card Number" required />
+          <label for="cardNumber">Credit Card Number</label>
+          <input type="number" name="cardNumber" id="cardNumber" placeholder="Card Number" required />
 
-          <label for="pay-expire">Expiration Date</label>
-          <input type="" name="pay-expire" id="" placeholder="Expiration Date" required />
+          <label for="expiration">Expiration Date</label>
+          <input type="text" name="expiration" id="pay-expiration" placeholder="Expiration Date" required />
 
-          <label for="pay-code">Security Code</label>
-          <input type="text" name="pay-code" id="" placeholder="mm/yy" required />
+          <label for="code">Security Code</label>
+          <input type="text" name="code" id="pay-code" placeholder="mm/yy" required />
         </fieldset>
-        <button type="submit">Checkout</button>
+        <button type="submit" id="checkoutSubmit">Checkout</button>
       </form>
       <div id="summary">
         <h2>Order Summary</h2>
