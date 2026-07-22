@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import ProductSort from "./ProductSort.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
@@ -17,7 +17,7 @@ if (title && category) {
   title.textContent = `Top Products: ${formattedCategory}`;
 }
 
-const productData = new ProductData();
+const productData = new ExternalServices();
 
 const productList = new ProductList(
   category,
