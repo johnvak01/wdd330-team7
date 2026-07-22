@@ -9,8 +9,8 @@ export default class CheckoutProcess{
     async init(){
         this.cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
         this.subtotal = this.calcSubTotal();
-        this.tax = this.calcTax(this.subtotal);
-        this.shipping = this.calcShipping(this.subtotal);
+        this.tax = this.calcTax();
+        this.shipping = this.calcShipping();
         this.renderOrderTotals();
     }
     calcSubTotal(){
@@ -21,16 +21,16 @@ export default class CheckoutProcess{
         }
         return total;
     }
-    calcTax(subtotal){
-        return total * 0.06;
+    calcTax(){
+        return this.subtotal * 0.06;
     }
-    calcShipping(subtotal){
-        if(subtotal.length() < 2){
+    calcShipping(){
+        if(this.subtotal.length() < 2){
             return 10;
         }
         else{
             let shippingcost = 8;
-            for(const item of subtotal){
+            for(const item of this.subtotal){
                 shippingcost += 2;
             }
             return shippingcost;
