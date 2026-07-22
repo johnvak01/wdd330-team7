@@ -7,7 +7,7 @@ function renderCartContents() {
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
   document.querySelectorAll(".remove-item").forEach((button) => {
-  button.addEventListener("click", removeFromCart);
+    button.addEventListener("click", removeFromCart);
   });
 
   const cartFooter = document.querySelector(".cart-footer");
