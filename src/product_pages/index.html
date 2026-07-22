@@ -6,18 +6,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sleep Outside | Cart</title>
+    <title>Sleep Outside | Index</title>
 
     <link rel="stylesheet" href="../css/style.css" />
 
-    <script src="../js/cart.js" type="module"></script>
+    <script src="../js/product.js" type="module"></script>
   </head>
 
   <body>
     <header class="divider">
       <div class="logo">
         <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
-        <a href="/index.html"> Sleep<span class="highlight">Outside</span></a>
+        <a href="../index.html"> Sleep<span class="highlight">Outside</span></a>
       </div>
 
       <div class="cart">
@@ -55,44 +55,31 @@
     </header>
 
     <main class="divider">
-      <section class="products">
-        <h2>My Cart</h2>
+      <section class="product-detail">
+        <h3>Cedar Ridge</h3>
 
-        <ul class="product-list">
-          <!-- <li class="cart-card divider">
-            <a href="product_pages/marmot-ajax-3.html" class="cart-card__image">
-              <img
-                src="images/tents/marmot-ajax-tent-3-person-3-season-in-pale-pumpkin-terracotta~p~880rr_01~320.jpg"
-                alt="Marmot Ajax tent"
-              />
-            </a>
-            <a href="product_pages/marmot-ajax-3.html">
-              <h2 class="card__name">Marmot Ajax Tent - 3-Person, 3-Season</h2>
-            </a>
-            <p class="cart-card__color">Pale Pumpkin/Terracotta</p>
-            <p class="cart-card__quantity">qty: 1</p>
-            <p class="cart-card__price">$199.99</p>
-          </li>
-          <li class="cart-card divider">
-            <a href="product_pages/marmot-ajax-3.html" class="cart-card__image">
-              <img
-                src="images/tents/the-north-face-talus-tent-4-person-3-season-in-golden-oak-saffron-yellow~p~985rf_01~320.jpg"
-                alt="Talus Tent - 4-Person, 3-Season"
-              />
-            </a>
-            <a href="product_pages/marmot-ajax-3.html">
-              <h2 class="card__name">
-                The North Face Talus Tent - 4-Person, 3-Season
-              </h2></a
-            >
-            <p class="cart-card__color">Golden Oak/Saffron Yellow</p>
-            <p class="cart-card__quantity">qty: 1</p>
-            <p class="cart-card__price">$199.99</p>
-          </li> -->
-        </ul>
+        <h2 class="divider">Rimrock Tent - 2-Person, 3-Season</h2>
 
-        <div class="cart-footer hide">
-          <p class="cart-total">Total: $0.00</p>
+        <img
+          class="divider"
+          src="../images/tents/cedar-ridge-rimrock-tent-2-person-3-season-in-rust-clay~p~344yj_01~320.jpg"
+          alt="Rimrock Tent - 2-Person, 3-Season"
+          id="productImage"
+        />
+
+        <p class="product-card__price">$69.99</p>
+        <p class="product__discount"></p>
+
+        <p class="product__color">Rust/Clay</p>
+
+        <p class="product__description">
+          Lightweight and ready for adventure, this Cedar Ridge Rimrock tent
+          boasts a weather-ready design that includes a tub-style floor and
+          factory-sealed rain fly
+        </p>
+
+        <div class="product-detail__add">
+          <button id="addToCart" data-id="344YJ">Add to Cart</button>
         </div>
       </section>
     </main>
