@@ -50,45 +50,51 @@
   </header>
 
   <main class="divider">
-    <section id="form">
+    <h2>Checkout</h2>
+    <section id="form-checkout">
       <form action="" method="Post">
-        <label for="first-name">First Name: </label>
-        <input type="first-name" name="" id="" placeholder="Name" required />
+        <fieldset>
+          <legend>Shipping Info</legend>
+          <label for="first-name">First Name: </label>
+          <input type="text" name="first-name" id="" placeholder="First Name" required />
 
-        <label for="last-name">Last Name: </label>
-        <input type="text" name="last-name" id="" placeholder="Name" required />
+          <label for="last-name">Last Name: </label>
+          <input type="text" name="last-name" id="" placeholder="Last Name" required />
 
-        <label for="address-street">Street Address:</label>
-        <input type="text" name="" id="" placeholder="Name" required />
+          <label for="address-street">Street Address:</label>
+          <input type="text" name="" id="" placeholder="Address" required />
 
-        <label for="address-city">City: </label>
-        <input type="text" name="address-city" id="" placeholder="Name" required />
+          <label for="address-city">City: </label>
+          <input type="text" name="address-city" id="" placeholder="City" required />
 
-        <label for="address-state">State/Province: </label>
-        <input type="text" name="" id="" placeholder="Name" required />
+          <label for="address-state">State/Province: </label>
+          <input type="text" name="" id="" placeholder="State/Province" required />
 
-        <label for="address-code"></label>
-        <input type="text" name="address-code" id="" placeholder="Name" required />
+          <label for="address-code">Postal Code</label>
+          <input type="text" name="address-code" id="" placeholder="Postal Code" required />
+        </fieldset>
+        <fieldset>
+          <legend>Payment Info</legend>
+          <label for="pay-card">Credit Card Number</label>
+          <input type="number" name="pay-card" id="" placeholder="Card Number" required />
 
-        <label for="pay-card">Credit Card Number</label>
-        <input type="text" name="pay-card" id="" placeholder="Name" required />
+          <label for="pay-expire">Expiration Date</label>
+          <input type="" name="pay-expire" id="" placeholder="Expiration Date" required />
 
-        <label for="pay-expire"></label>
-        <input type="text" name="pay-expire" id="" placeholder="Name" required />
-
-        <label for="pay-code"></label>
-        <input type="text" name="pay-code" id="" placeholder="Name" required />
-
-        <button type="submit">Submit</button>
+          <label for="pay-code">Security Code</label>
+          <input type="text" name="pay-code" id="" placeholder="mm/yy" required />
+        </fieldset>
+        <button type="submit">Checkout</button>
       </form>
+      <div id="summary">
+        <h2>Order Summary</h2>
+        <span id="summary-subtotal">Subtotal:</span><span>$00.00</span>
+        <span id="summary-tax">Tax:</span> <span>$00.00</span>
+        <span id="summary-shipping">Shipping:</span> <span>$00.00</span>
+        <span id="summary-total">Total:</span> <span>$00.00</span>
+      </div>
     </section>
-    <section id="summary">
-      <h2>Order Summary</h2>
-      <div id="summary-subtotal">$00.00</div>
-      <div id="summary-tax">$00.00</div>
-      <div id="summary-shipping">$00.00</div>
-      <div id="summary-total">$00.00</div>
-    </section>
+
   </main>
 
   <footer>&copy;NOT a real business</footer>
