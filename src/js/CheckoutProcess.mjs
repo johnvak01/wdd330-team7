@@ -12,7 +12,7 @@ function formDataToJSON(formElement) {
     return convertedJSON;
 }
 function packageOrder(items) {
-    const itemsFormatted = items.Map((item) => (
+    const itemsFormatted = items.map((item) => (
         {
             id: item.id,
             name: item.Name,
@@ -77,15 +77,15 @@ export default class CheckoutProcess {
         totalElement.textContent = `$${(this.subtotal + this.tax + this.shipping).toFixed(2)}`;
     }
 
-    async checkout(form) {
-        const formElement = document.forms("checkout-form");
+    async checkout() {
+        const formElement = document.forms["checkout"];
         const order = formDataToJSON(formElement);
 
         order.orderDate = new Date().toISOString();
         order.orderTotal = this.total;
         order.tax = this.tax;
         order.shipping = this.shipping;
-        order.items = packageItems(this.list);
+        order.items = packageOrder(this.cartItems);
         //console.log(order);
         try {
             const response = await services.checkout(order);
