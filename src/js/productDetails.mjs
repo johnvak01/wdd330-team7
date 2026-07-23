@@ -27,7 +27,7 @@ export default class ProductDetails {
       
         document.querySelector(".product-card__price").textContent = "$" + this.product.FinalPrice;
         if (this.product.FinalPrice < this.product.SuggestedRetailPrice) {
-          document.querySelector(".product-card__price").innerHTML += `<span class="product-card__price--sale">: 🏷️ Discounted ${((this.product.FinalPrice / this.product.SuggestedRetailPrice) * 100).toFixed(0)}%!</span>`;
+            document.querySelector(".product-card__price").innerHTML += `<span class="product-card__price--sale">: Discounted ${((this.product.FinalPrice / this.product.SuggestedRetailPrice) * 100).toFixed(0)}%!</span>`;
         }
         document.querySelector(".product__color").textContent = this.product.Colors[0].ColorName;
         document.querySelector(".product__description").innerHTML = this.product.DescriptionHtmlSimple;
