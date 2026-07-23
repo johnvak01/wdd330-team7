@@ -15,11 +15,27 @@ export default class ProductData {
     const response = await fetch(`${baseURL}products/search/${category}`);
     const data = await convertToJson(response);
 
-    return data.Result
+    return data.Result;
   }
 
   async findProductById(id) {
     const response = await fetch(`${baseURL}product/${id}`);
+    const data = await convertToJson(response);
+
+    return data.Result;
+  }
+
+  // search logic
+  async searchProducts(query) {
+
+    const response = await fetch(
+      `${baseURL}products/search/${encodeURIComponent(query)}`
+    );
+
+    if (!response.ok) {
+      return [];
+    }
+
     const data = await convertToJson(response);
 
     return data.Result;
