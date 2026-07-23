@@ -50,17 +50,20 @@ export default class CheckoutProcess {
     calcTax() {
         return this.subtotal * 0.06;
     }
-    calcShipping() {
-        if (this.subtotal.length() < 2) {
+    calcShipping(cartItems) {
+        if (this.cartItems.length < 2) {
             return 10;
         }
         else {
             let shippingcost = 8;
-            for (const item of this.subtotal) {
+            for (const item of this.cartItems) {
                 shippingcost += 2;
             }
             return shippingcost;
         }
+    }
+    calcOrderTotal(){
+        this.total = this.subtotal + this.tax + this.shipping;
     }
     renderOrderTotals() {
         const subtotalElement = document.querySelector("#summary-subtotal + span");

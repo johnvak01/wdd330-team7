@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import { CheckoutProcess } from "./CheckoutProcess.mjs";
+import CheckoutProcess from "./CheckoutProcess.mjs";
 
 loadHeaderFooter();
 
@@ -9,7 +9,7 @@ order.init();
 // Add event listeners to fire calculateOrderTotal when the user changes the zip code
 document
   .querySelector("#zip")
-  .addEventListener("blur", order.calculateOrderTotal.bind(order));
+  .addEventListener("blur", order.calcOrderTotal.bind(order));
 
 // listening for click on the button
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
