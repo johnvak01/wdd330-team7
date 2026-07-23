@@ -8,7 +8,9 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../js/checkout.js" type="module"></script>
   </head>
 
   <body>
@@ -59,6 +61,117 @@
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
+
+        <form id="checkout-form">
+
+          <h3>Customer Information</h3>
+
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            required
+          />
+
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            required
+          />
+
+          <h3>Address</h3>
+
+          <label for="street">Street Address</label>
+          <input
+            type="text"
+            id="street"
+            name="street"
+            required
+          />
+
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            required
+          />
+
+          <label for="state">State</label>
+          <input
+            type="text"
+            id="state"
+            name="state"
+            required
+          />
+
+          <label for="zip">Zip Code</label>
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            required
+          />
+
+          <h3>Payment</h3>
+
+          <label for="cardNumber">Credit Card Number</label>
+          <input
+            type="text"
+            id="cardNumber"
+            name="cardNumber"
+            required
+          />
+
+          <label for="expiration">Expiration Date</label>
+          <input
+            type="text"
+            id="expiration"
+            name="expiration"
+            required
+          />
+
+          <label for="code">Security Code</label>
+          <input
+            type="text"
+            id="code"
+            name="code"
+            required
+          />
+
+          <button type="submit">
+            Place Order
+          </button>
+
+        </form>
+
+        <section class="order-summary">
+          <h3>Order Summary</h3>
+
+          <p>
+            Subtotal:
+            <span id="subtotal">$0.00</span>
+          </p>
+
+          <p>
+            Tax:
+            <span id="tax">$0.00</span>
+          </p>
+
+          <p>
+            Shipping:
+            <span id="shipping">$0.00</span>
+          </p>
+
+          <p>
+            Order Total:
+            <span id="order-total">$0.00</span>
+          </p>
+        </section>
+
       </section>
     </main>
 
