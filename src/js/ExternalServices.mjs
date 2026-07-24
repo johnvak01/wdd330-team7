@@ -1,11 +1,13 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
 
 function convertToJson(res) {
+  let result = res.json();
+  console.log(result);
   if (res.ok) {
-    return res.json();
+    return result;
   } else {
-    throw new Error("Bad Response");
-  }
+    throw { message: "Bad Response", status: res.status, statusText: result };
+  };
 }
 
 export default class ExternalServices {
@@ -33,5 +35,19 @@ export default class ExternalServices {
       body: JSON.stringify(payload),
     };
     return await fetch(`${baseURL}checkout/`, options).then(convertToJson);
+  }
+  async searchProducts(query) {
+
+    const response = await fetch(
+      `${baseURL}products/search/${encodeURIComponent(query)}`
+    );
+
+    if (!response.ok) {
+      return [];
+    }
+
+    const data = await convertToJson(response);
+
+    return data.Result;
   }
 }

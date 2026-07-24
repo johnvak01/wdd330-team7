@@ -79,3 +79,28 @@ export async function loadHeaderFooter(){
   }  
 
 }
+
+export function alertMessage(message, scroll=true){
+  const mainElement = document.querySelector("main")
+  const alertElement = document.createElement("div");
+  alertElement.classList.add("alert");
+  
+  if (scroll) {
+    alertElement.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const exitElement = document.createElement("span");
+  exitElement.classList.add("alert-exit");
+  exitElement.textContent = "x";
+
+  alertElement.textContent = message;
+  alertElement.append(exitElement);
+
+  
+  exitElement.addEventListener("click", (e) => {
+    if (!e.target.closest('span')) return;
+    exitElement.remove();
+    alertElement.remove();
+  });
+  mainElement.prepend(alertElement);
+}
