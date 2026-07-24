@@ -19,5 +19,6 @@ document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
     form.reportValidity();
     if (status) {
         order.checkout();
+        window.location.href = "status.html";
     }
 });
