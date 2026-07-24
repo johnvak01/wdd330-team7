@@ -1,4 +1,5 @@
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage, alertMessage } from "./utils.mjs";
+
 
 export default class ProductDetails {
     constructor(productId, dataSource) {
@@ -16,6 +17,7 @@ export default class ProductDetails {
         let tasks = JSON.parse(localStorage.getItem("so-cart")) || [];
         tasks.push(this.product);
         setLocalStorage("so-cart", tasks);
+        alertMessage("Product added to cart!");
     }
     renderProductDetails() {
         document.querySelector("h2").textContent = this.product.Brand.Name;
