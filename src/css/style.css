@@ -520,3 +520,19 @@ footer {
   color: var(--primary-color);
   cursor: pointer;
 }
+
+.cart-pulse{
+  animation: bounce-up 1s ease-in-out;
+}
+
+@keyframes bounce-up{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
