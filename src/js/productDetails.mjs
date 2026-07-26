@@ -23,15 +23,32 @@ export default class ProductDetails {
     }
     addProductToCart() {
         let tasks = JSON.parse(localStorage.getItem("so-cart")) || [];
-        tasks.push(this.product);
+
+        const existingProduct = tasks.find((item) => item.Id === this.product.Id);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            this.product.quantity = 1;
+            tasks.push(this.product);
+        }
+
         setLocalStorage("so-cart", tasks);
         alertMessage("Product added to cart!");
-        document.querySelector(".cart_superscript").textContent = tasks.length;
+
+        const totalItems = tasks.reduce(
+            (total, item) => total + (item.quantity || 1),
+            0,
+        );
+
+        document.querySelector(".cart_superscript").textContent = totalItems;
+
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
-          });
-    }
+            behavior: "smooth",
+        });
+        }
+    
     renderProductDetails() {
         document.querySelector("h2").textContent = this.product.Brand.Name;
         document.querySelector("h3").textContent = this.product.NameWithoutBrand;

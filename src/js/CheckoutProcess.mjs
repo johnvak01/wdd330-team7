@@ -14,13 +14,13 @@ function formDataToJSON(formElement) {
 function packageOrder(items) {
     const itemsFormatted = items.map((item) => (
         {
-            id: item.id,
+            id: item.Id,
             name: item.Name,
             price: item.FinalPrice,
-            quantity: item.quantity
+            quantity: item.quantity || 1,
         }
     ));
-    console.log(itemsFormatted);
+    return itemsFormatted;
 }
 
 export default class CheckoutProcess {
@@ -37,13 +37,14 @@ export default class CheckoutProcess {
         this.subtotal = this.calcSubTotal();
         this.tax = this.calcTax();
         this.shipping = this.calcShipping();
+        this.calcOrderTotal();
         this.renderOrderTotals();
     }
     calcSubTotal() {
         let total = 0;
         const cartItems = JSON.parse(localStorage.getItem("so-cart")) || [];
         for (const item of cartItems) {
-            total += item.FinalPrice;
+            total += item.FinalPrice * (item.quantity || 1);
         }
         return total;
     }
@@ -51,16 +52,14 @@ export default class CheckoutProcess {
         return this.subtotal * 0.06;
     }
     calcShipping(cartItems) {
-        if (this.cartItems.length < 2) {
+        const totalItems = this.cartItems.reduce(
+            (total, item) => total + (item.quantity || 1),
+            0,
+        );
+        if (totalItems < 2) {
             return 10;
         }
-        else {
-            let shippingcost = 8;
-            for (const item of this.cartItems) {
-                shippingcost += 2;
-            }
-            return shippingcost;
-        }
+        return 8 + (totalItems * 2);
     }
     calcOrderTotal(){
         this.total = this.subtotal + this.tax + this.shipping;
