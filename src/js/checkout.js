@@ -12,7 +12,7 @@ document
   .addEventListener("blur", order.calcOrderTotal.bind(order));
 
 // listening for click on the button
-document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
+document.forms["checkout"].addEventListener("submit", (e) => {
   e.preventDefault();
 
   order.checkout();

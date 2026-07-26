@@ -1,6 +1,6 @@
 import { getParam } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
-import ProductDetails from "./ProductDetails.mjs";
+import ProductDetails from "./productDetails.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
 const dataSource = new ExternalServices();

@@ -1,4 +1,5 @@
 import ExternalServices from "./ExternalServices.mjs";
+import { alertMessage } from "./utils.mjs";
 
 const services = new ExternalServices();
 
@@ -14,13 +15,13 @@ function formDataToJSON(formElement) {
 function packageOrder(items) {
     const itemsFormatted = items.map((item) => (
         {
-            id: item.id,
+            id: item.Id,
             name: item.Name,
             price: item.FinalPrice,
             quantity: item.quantity
         }
     ));
-    console.log(itemsFormatted);
+    return itemsFormatted;
 }
 
 export default class CheckoutProcess {
@@ -37,6 +38,7 @@ export default class CheckoutProcess {
         this.subtotal = this.calcSubTotal();
         this.tax = this.calcTax();
         this.shipping = this.calcShipping();
+        this.calcOrderTotal();
         this.renderOrderTotals();
     }
     calcSubTotal() {
@@ -89,9 +91,12 @@ export default class CheckoutProcess {
         //console.log(order);
         try {
             const response = await services.checkout(order);
-            console.log(response);
+            localStorage.removeItem(this.key);
+            window.location.href = "./success.html";
         } catch (err) {
             console.log(err);
+
+            alertMessage("There was an error processing your order. Please check your information and try again.");
         }
     }
 }

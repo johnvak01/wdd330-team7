@@ -278,6 +278,31 @@ button {
   background-color: transparent;
 }
 
+/* stretch goal: alerts Message */
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #b00020;
+  background-color: #ffe6e6;
+  color: #b00020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert-close {
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+/* End stretch goal: alerts Message */
+
 /* Product Sort Dropdown */
 #sort-products {
   display: block;
