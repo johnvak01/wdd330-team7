@@ -40,33 +40,33 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-export function renderWithTemplate(template, parentElement, data, callback){
+export function renderWithTemplate(template, parentElement, data, callback) {
   parentElement.innerHTML = template;
-  if (callback) {  
+  if (callback) {
     callback(data);
   }
 }
 
-export async function loadTemplate(path){
+export async function loadTemplate(path) {
   const response = await fetch(path);
   const template = await response.text();
   return template;
 }
 
-export async function loadHeaderFooter(){
+export async function loadHeaderFooter() {
   const headerElement = document.querySelector("header");
   const headerTemplate = await loadTemplate("/partials/header.html");
-  
+
   const footerElement = document.querySelector("footer");
   const footerTemplate = await loadTemplate("/partials/footer.html");
-  
+
 
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 
   // load search after header exists
   import("./search.js");
-  
+
   const cart_superscript = document.querySelector(".cart_superscript");
 
   let cart = getLocalStorage("so-cart") || [];
@@ -76,14 +76,52 @@ export async function loadHeaderFooter(){
   } else {
     cart_superscript.textContent = "";
     cart_superscript.classList.add("hide");
-  }  
+  }
 
 }
 
+// form data functionality
 export function formDataToJSON(formElement) {
 
   const formData = new FormData(formElement);
 
   return Object.fromEntries(formData);
 
- }
+}
+
+//  error handling and error validation functionality 
+export function alertMessage(message, scroll = true) {
+
+  const existingAlert = document.querySelector(".alert");
+
+  if (existingAlert) {
+    existingAlert.remove();
+  }
+
+
+  const alert = document.createElement("div");
+
+  alert.classList.add("alert");
+
+
+  alert.innerHTML = `
+    <span>${message}</span>
+    <button aria-label="close alert">X</button>
+  `;
+
+  alert.querySelector("button")
+    .addEventListener("click", () => {
+      alert.remove();
+    });
+
+  const main = document.querySelector("main");
+
+  main.prepend(alert);
+
+  if (scroll) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+}

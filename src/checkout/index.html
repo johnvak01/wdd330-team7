@@ -61,6 +61,7 @@
         <h2>Review &amp; Place your Order</h2>
       </section>
 
+      <!-- error section -->
       <div class="checkout-layout">
         <div id="checkout-error" class="checkout-error hide">
           <h3>Unable to complete your order</h3>
@@ -74,12 +75,12 @@
 
             <label>
               First Name
-              <input type="text" name="fname" required />
+              <input type="text" name="fname" required minlength="2" />
             </label>
 
             <label>
               Last Name
-              <input type="text" name="lname" required />
+              <input type="text" name="lname" required minlength="2" />
             </label>
 
             <label>
@@ -99,7 +100,14 @@
 
             <label>
               Zip Code
-              <input id="zip" type="text" name="zip" required />
+              <input
+                id="zip"
+                type="text"
+                name="zip"
+                required
+                pattern="[0-9]{5}"
+                title="Enter a valid 5 digit zip code"
+              />
             </label>
           </fieldset>
 
@@ -108,7 +116,15 @@
 
             <label>
               Card Number
-              <input type="text" name="cardNumber" maxlength="16" required />
+              <input
+                type="text"
+                name="cardNumber"
+                required
+                minlength="16"
+                maxlength="16"
+                pattern="[0-9]{16}"
+                title="Enter a valid 16 digit card number"
+              />
             </label>
 
             <label>
@@ -118,12 +134,20 @@
                 name="expiration"
                 placeholder="MM/YY"
                 required
+                pattern="^(0[1-9]|1[0-2])\/([2-9][0-9])$"
+                title="Enter the expiration date in MM/YY format (example: 08/30)"
               />
             </label>
 
             <label>
               Security Code
-              <input type="password" name="code" maxlength="3" required />
+              <input
+                type="password"
+                name="code"
+                minlength="3"
+                maxlength="3"
+                required
+              />
             </label>
           </fieldset>
 
@@ -156,13 +180,6 @@
             <span id="orderTotal">$0.00</span>
           </div>
         </aside>
-      </div>
-
-      <!-- Hidden until order succeeds -->
-      <div id="checkout-success" class="checkout-success hide">
-        <h2>🎉 Order Placed Successfully!</h2>
-        <p>Thank you for shopping with SleepOutside.</p>
-        <a href="/">Continue Shopping</a>
       </div>
     </main>
 

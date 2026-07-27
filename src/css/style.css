@@ -435,7 +435,7 @@ button {
 ========================= */
 
 .checkout-form {
-  background: #ffffff;
+  background: #fff;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -461,7 +461,6 @@ button {
 }
 
 .checkout-form input {
-  display: block;
   width: 100%;
   margin-top: 0.35rem;
   padding: 0.75rem;
@@ -469,6 +468,9 @@ button {
   border-radius: 6px;
   font-size: 1rem;
   box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .checkout-form input:focus {
@@ -477,27 +479,48 @@ button {
   box-shadow: 0 0 4px rgba(13, 107, 71, 0.3);
 }
 
+/* Validation */
+
+.checkout-form input:invalid:not(:placeholder-shown) {
+  border-color: #d9534f;
+}
+
+.checkout-form input:valid:not(:placeholder-shown) {
+  border-color: #2f9e44;
+}
+
+.checkout-form input:invalid:focus {
+  box-shadow: 0 0 5px rgba(217, 83, 79, 0.3);
+}
+
+.checkout-form input:valid:focus {
+  box-shadow: 0 0 5px rgba(47, 158, 68, 0.3);
+}
+
 /* =========================
    CHECKOUT BUTTON
 ========================= */
 
-.checkout-form button,
 .checkout-btn {
   width: 100%;
-  background: #0d6b47;
-  color: white;
-  border: none;
   padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #0d6b47;
+  color: #fff;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.checkout-form button:hover,
 .checkout-btn:hover {
   background: #095538;
+}
+
+.checkout-btn:disabled {
+  background: #b5b5b5;
+  cursor: not-allowed;
 }
 
 /* =========================
@@ -524,13 +547,13 @@ button {
 }
 
 .summary-row.total {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #0d6b47;
 }
 
 /* =========================
-   SUCCESS MESSAGE
+   SUCCESS PAGE
 ========================= */
 
 .checkout-success {
@@ -550,14 +573,15 @@ button {
 
 .checkout-success p {
   font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .checkout-success a {
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1.5rem;
   background: #0d6b47;
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s ease;
@@ -568,28 +592,63 @@ button {
 }
 
 /* =========================
-   HIDDEN ELEMENTS
+   ERROR MESSAGE
 ========================= */
-
-.hide {
-  display: none;
-}
-
-/* error message  */
 
 .checkout-error {
   grid-column: 1 / -1;
   background: #fdecea;
-  border: 1px solid #d9534f;
   color: #842029;
-  padding: 1rem;
+  border: 1px solid #d9534f;
   border-radius: 8px;
+  padding: 1rem;
   margin-bottom: 1rem;
 }
 
 .checkout-error h3 {
   margin: 0 0 0.5rem;
 }
+
+.checkout-error p {
+  margin: 0;
+}
+
+/* Alert generated from utils */
+.alert {
+  position: relative;
+  background: #fdecea;
+  color: #842029;
+  border: 1px solid #d9534f;
+  border-radius: 8px;
+  padding: 1rem 3rem 1rem 1rem;
+  margin: 1rem auto;
+}
+
+.alert button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  color: #842029;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.alert button:hover {
+  color: #b02a37;
+}
+
+/* =========================
+   HELPERS
+========================= */
+
+/* .hide {
+  display: none !important;
+} */
 
 @media screen and (min-width: 500px) {
   body {
@@ -625,8 +684,10 @@ button {
     position: static;
   }
 
-  .checkout-form {
-    padding: 1.2rem;
+  .checkout-form,
+  .order-summary,
+  .checkout-success {
+    width: 100%;
   }
 }
 
