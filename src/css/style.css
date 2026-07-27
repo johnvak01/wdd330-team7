@@ -575,6 +575,22 @@ button {
   display: none;
 }
 
+/* error message  */
+
+.checkout-error {
+  grid-column: 1 / -1;
+  background: #fdecea;
+  border: 1px solid #d9534f;
+  color: #842029;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.checkout-error h3 {
+  margin: 0 0 0.5rem;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
