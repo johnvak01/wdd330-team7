@@ -79,3 +79,11 @@ export async function loadHeaderFooter(){
   }  
 
 }
+
+export function formDataToJSON(formElement) {
+
+  const formData = new FormData(formElement);
+
+  return Object.fromEntries(formData);
+
+ }

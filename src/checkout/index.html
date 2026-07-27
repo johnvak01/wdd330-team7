@@ -8,13 +8,13 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
     <header class="divider">
       <div class="logo">
-        <img src="images/noun_Tent_2517.svg" alt="tent image for logo" />
+        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
 
         <a href="index.html">
           Sleep
@@ -58,10 +58,110 @@
 
     <main class="divider">
       <section class="products">
-        <h2>Review & Place your Order</h2>
+        <h2>Review &amp; Place your Order</h2>
       </section>
+
+      <div class="checkout-layout">
+        <!-- Checkout Form -->
+        <form name="checkout" class="checkout-form">
+          <fieldset>
+            <legend>Customer Information</legend>
+
+            <label>
+              First Name
+              <input type="text" name="fname" required />
+            </label>
+
+            <label>
+              Last Name
+              <input type="text" name="lname" required />
+            </label>
+
+            <label>
+              Street Address
+              <input type="text" name="street" required />
+            </label>
+
+            <label>
+              City
+              <input type="text" name="city" required />
+            </label>
+
+            <label>
+              State
+              <input type="text" name="state" required />
+            </label>
+
+            <label>
+              Zip Code
+              <input id="zip" type="text" name="zip" required />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment</legend>
+
+            <label>
+              Card Number
+              <input type="text" name="cardNumber" maxlength="16" required />
+            </label>
+
+            <label>
+              Expiration
+              <input
+                type="text"
+                name="expiration"
+                placeholder="MM/YY"
+                required
+              />
+            </label>
+
+            <label>
+              Security Code
+              <input type="password" name="code" maxlength="3" required />
+            </label>
+          </fieldset>
+
+          <button class="checkout-btn" type="submit">Place Order</button>
+        </form>
+
+        <!-- Order Summary -->
+        <aside class="order-summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Tax</span>
+            <span id="tax">$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shipping">$0.00</span>
+          </div>
+
+          <hr />
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="orderTotal">$0.00</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Hidden until order succeeds -->
+      <div id="checkout-success" class="checkout-success hide">
+        <h2>🎉 Order Placed Successfully!</h2>
+        <p>Thank you for shopping with SleepOutside.</p>
+        <a href="/">Continue Shopping</a>
+      </div>
     </main>
 
     <footer>&copy;NOT a real business</footer>
+    <script type="module" src="/js/checkout.js"></script>
   </body>
 </html>

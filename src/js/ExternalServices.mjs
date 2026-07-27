@@ -1,4 +1,5 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
+const checkoutURL = `${baseURL}checkout`;
 
 function convertToJson(res) {
   if (res.ok) {
@@ -8,7 +9,7 @@ function convertToJson(res) {
   }
 }
 
-export default class ProductData {
+export default class ExternalServices {
   constructor() { }
 
   async getData(category) {
@@ -39,5 +40,20 @@ export default class ProductData {
     const data = await convertToJson(response);
 
     return data.Result;
+  }
+
+  // Checkout Order Submission
+  async checkout(order) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(order),
+    };
+
+    const response = await fetch(checkoutURL, options);
+
+    return convertToJson(response);
   }
 }
