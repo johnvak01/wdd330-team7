@@ -643,12 +643,34 @@ button {
 }
 
 /* =========================
-   HELPERS
+   CART CHECKOUT BUTTON
 ========================= */
 
-/* .hide {
-  display: none !important;
-} */
+.checkout-button {
+  display: inline-block;
+  max-width: 30%;
+  text-align: center;
+  background: #0d6b47;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.checkout-button:hover {
+  background: #095538;
+  transform: translateY(-2px);
+}
+
+.checkout-button:active {
+  transform: translateY(0);
+}
 
 @media screen and (min-width: 500px) {
   body {
