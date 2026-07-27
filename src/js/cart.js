@@ -10,6 +10,10 @@ function renderCartContents() {
     button.addEventListener("click", removeFromCart);
   });
 
+  document.querySelectorAll(".quantity-input").forEach((input) => {
+    input.addEventListener("change", updateQuantity);
+  });
+
   const cartFooter = document.querySelector(".cart-footer");
 
   if (cartItems.length > 0) {
@@ -38,6 +42,23 @@ function removeFromCart(event) {
   renderCartContents();
 }
 
+function updateQuantity(event) {
+  const productId = event.target.dataset.id;
+  const newQuantity = Number(event.target.value);
+
+  const cartItems = getLocalStorage("so-cart") || [];
+
+  const cartItem = cartItems.find((product) => product.Id === productId);
+
+  if (cartItem && newQuantity >= 1) {
+    cartItem.quantity = newQuantity;
+  }
+
+  localStorage.setItem("so-cart", JSON.stringify(cartItems));
+
+  renderCartContents();
+}
+
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <button class="remove-item" data-id="${item.Id}" type="button">
@@ -54,7 +75,16 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: ${item.quantity}</p>
+    <label class="cart-card__quantity">
+      Qty:
+      <input
+        type="number"
+        class="quantity-input"
+        data-id="${item.Id}"
+        value="${item.quantity}"
+        min="1"
+      />
+    </label>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
 
