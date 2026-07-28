@@ -71,8 +71,14 @@ export async function loadHeaderFooter(){
 
   let cart = getLocalStorage("so-cart") || [];
   // console.log(cart.length);
-  if (cart.length > 0) {
-    cart_superscript.textContent = cart.length;
+  const totalItems = cart.reduce(
+    (total, item) => total + (item.quantity || 1),
+    0,
+  );
+
+  if (totalItems > 0) {
+    cart_superscript.textContent = totalItems;
+    cart_superscript.classList.remove("hide");
   } else {
     cart_superscript.textContent = "";
     cart_superscript.classList.add("hide");

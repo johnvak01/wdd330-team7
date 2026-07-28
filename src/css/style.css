@@ -273,6 +273,14 @@ button {
   cursor: pointer;
 }
 
+/* Cart quantity input */
+.cart-card__quantity input {
+  width: 45px;
+  padding: 0.25rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
 .remove-item:hover {
   color: #b00020;
   background-color: transparent;
