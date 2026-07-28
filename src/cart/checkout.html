@@ -1,111 +1,72 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
 
-    <title>Sleep Outside | Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../css/style.css" />
+  <title>Sleep Outside | Checkout</title>
 
-    <script src="../js/checkout.js" type="module"></script>
-  </head>
+  <link rel="stylesheet" href="../css/style.css" />
 
-  <body>
-    <header class="divider"></header>
+  <script src="../js/checkout.js" type="module"></script>
+</head>
 
-    <main class="divider">
-      <h2>Checkout</h2>
-      <section id="form-checkout">
-        <form action="" method="Post" name="checkout">
-          <fieldset>
-            <legend>Shipping Info</legend>
-            <label for="fname">First Name: </label>
-            <input
-              type="text"
-              name="fname"
-              id=""
-              placeholder="First Name"
-              required
-            />
+<body>
+  <header class="divider">
+  </header>
 
-            <label for="lname">Last Name: </label>
-            <input
-              type="text"
-              name="lname"
-              id=""
-              placeholder="Last Name"
-              required
-            />
+  <main class="divider">
+    <h2>Checkout</h2>
+    <section id="form-checkout">
+      <form action="" method="Post" name="checkout">
+        <fieldset>
+          <legend>Shipping Info</legend>
+          <label for="fname">First Name: </label>
+          <input type="text" name="fname" id="" placeholder="First Name" required />
 
-            <label for="street">Street Address:</label>
-            <input
-              type="text"
-              name="street"
-              id=""
-              placeholder="Address"
-              required
-            />
+          <label for="lname">Last Name: </label>
+          <input type="text" name="lname" id="" placeholder="Last Name" required />
 
-            <label for="city">City: </label>
-            <input type="text" name="city" id="" placeholder="City" required />
+          <label for="street">Street Address:</label>
+          <input type="text" name="street" id="" placeholder="Address" required />
 
-            <label for="state">State/Province: </label>
-            <input
-              type="text"
-              name="state"
-              id=""
-              placeholder="State/Province"
-              required
-            />
+          <label for="city">City: </label>
+          <input type="text" name="city" id="" placeholder="City" required />
 
-            <label for="zip">Postal Code</label>
-            <input
-              type="text"
-              name="zip"
-              id="zip"
-              placeholder="Postal Code"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <legend>Payment Info</legend>
-            <label for="cardNumber">Credit Card Number</label>
-            <input
-              type="number"
-              name="cardNumber"
-              id="cardNumber"
-              placeholder="Card Number"
-              required
-            />
+          <label for="state">State/Province: </label>
+          <input type="text" name="state" id="" placeholder="State/Province" required />
 
-            <label for="expiration">Expiration Date</label>
-            <input
-              type="text"
-              name="expiration"
-              id="pay-expiration"
-              placeholder="Expiration Date"
-              placeholder="mm/yy"
-              required
-            />
+          <label for="zip">Postal Code</label>
+          <input type="text" name="zip" id="zip" placeholder="Postal Code" required />
+        </fieldset>
+        <fieldset>
+          <legend>Payment Info</legend>
+          <label for="cardNumber">Credit Card Number</label>
+          <input type="number" name="cardNumber" id="cardNumber" placeholder="Card Number" required />
 
-            <label for="code">Security Code</label>
-            <input type="text" name="code" id="pay-code" required />
-          </fieldset>
-          <button type="submit" id="checkoutSubmit">Checkout</button>
-        </form>
-        <div id="summary">
-          <h2>Order Summary</h2>
-          <span id="summary-subtotal">Subtotal:</span><span>$00.00</span>
-          <span id="summary-tax">Tax:</span> <span>$00.00</span>
-          <span id="summary-shipping">Shipping:</span> <span>$00.00</span>
-          <span id="summary-total">Total:</span> <span>$00.00</span>
-        </div>
-      </section>
-    </main>
+          <label for="expiration">Expiration Date</label>
+          <input type="text" name="expiration" id="pay-expiration" placeholder="Expiration Date" placeholder="mm/yy" required />
 
-    <footer>&copy;NOT a real business</footer>
-  </body>
+          <label for="code">Security Code</label>
+          <input type="text" name="code" id="pay-code"  required />
+        </fieldset>
+        <button type="submit" id="checkoutSubmit">Checkout</button>
+      </form>
+      <div id="summary">
+        <h2>Order Summary</h2>
+        <span id="summary-subtotal">Subtotal:</span><span>$00.00</span>
+        <span id="summary-tax">Tax:</span> <span>$00.00</span>
+        <span id="summary-shipping">Shipping:</span> <span>$00.00</span>
+        <span id="summary-total">Total:</span> <span>$00.00</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>&copy;NOT a real business</footer>
+</body>
+
 </html>
