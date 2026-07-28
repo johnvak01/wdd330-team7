@@ -20,7 +20,10 @@ function renderCartContents() {
     cartFooter.classList.remove("hide");
   }
 
-  const total = cartItems.reduce((sum, item) => sum + (item.FinalPrice * item.quantity), 0);
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.FinalPrice * item.quantity,
+    0,
+  );
 
   document.querySelector(".cart-total").innerHTML =
     `Total: $${total.toFixed(2)}`;

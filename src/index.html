@@ -94,11 +94,55 @@
 
         <ul class="product-list"></ul>
       </section>
+
+      <!-- newsletter  -->
+      <section class="newsletter">
+        <div class="newsletter-content">
+          <h2>Join Our Newsletter</h2>
+          <p>
+            Get the latest outdoor gear updates, new arrivals, and exclusive
+            offers.
+          </p>
+
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <label for="newsletter-name">Full Name</label>
+            <input
+              id="newsletter-name"
+              name="name"
+              type="text"
+              placeholder="Enter your full name"
+              minlength="2"
+              maxlength="50"
+              required
+            />
+
+            <span class="field-error" id="name-error"></span>
+            <label for="newsletter-email">Email Address</label>
+
+            <input
+              id="newsletter-email"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <span class="field-error" id="email-error"></span>
+
+            <button type="submit">Subscribe</button>
+          </form>
+          <div
+            id="newsletter-message"
+            class="newsletter-message hide"
+            role="alert"
+          ></div>
+        </div>
+      </section>
     </main>
     <footer>
       &copy;2025 ⛺ SleepOutside ⛺ WDD 330 ⛺ BYU-Idaho for BYU-Pathway
       Worldwide Online
     </footer>
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/newsletter.js"></script>
   </body>
 </html>
