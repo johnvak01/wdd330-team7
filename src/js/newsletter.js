@@ -2,7 +2,7 @@
 const newsletterForm = document.querySelector("#newsletter-form");
 const message = document.querySelector("#newsletter-message");
 
-if (newsletterForm) {
+if (newsletterForm && message) {
   newsletterForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -17,7 +17,7 @@ if (newsletterForm) {
 
     message.textContent = `Thank you, ${name}! You have successfully subscribed to our newsletter.`;
 
-    message.className = "newsletter-message success";
     message.classList.remove("hide");
+    message.className = "newsletter-message success";
   });
 }
