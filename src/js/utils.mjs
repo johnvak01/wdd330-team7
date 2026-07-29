@@ -86,7 +86,7 @@ export async function loadHeaderFooter(){
 
 }
 
-export function alertMessage(message, scroll=true){
+export function alertMessage(message, scroll = true){
   const mainElement = document.querySelector("main")
   const alertElement = document.createElement("div");
   alertElement.classList.add("alert");
@@ -104,7 +104,7 @@ export function alertMessage(message, scroll=true){
 
   
   exitElement.addEventListener("click", (e) => {
-    if (!e.target.closest('span')) return;
+    if (!e.target.closest("span")) return;
     exitElement.remove();
     alertElement.remove();
   });
