@@ -549,12 +549,6 @@ button {
     flex: 1;
     width: auto;
   }
-
-  /* newsletter signup */
-  .newsletter {
-    margin: 2rem 1rem;
-    padding: 1.5rem;
-  }
 }
 
 footer {
@@ -582,13 +576,11 @@ footer {
   height: 20px;
   border-radius: 50%;
 }
-
 /* Checkout Form */
 #form-checkout {
   display: grid;
   grid-template-columns: 66% 34%;
 }
-
 #form-checkout fieldset,
 #summary {
   display: grid;
@@ -618,7 +610,6 @@ footer {
   border-radius: 0.5rem;
   justify-self: start;
 }
-
 /* generic alert */
 .alert {
   padding: 0.25rem;
@@ -628,7 +619,6 @@ footer {
   background-color: var(--primary-color);
   width: fit-content;
 }
-
 .alert span {
   font-weight: bold;
   color: var(--secondary-color);
@@ -636,7 +626,6 @@ footer {
   border-radius: 50%;
   padding: 0.15rem;
 }
-
 .alert span:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -651,11 +640,9 @@ footer {
   0% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-5px);
   }
-
   100% {
     transform: translateY(0);
   }
