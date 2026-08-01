@@ -55,6 +55,8 @@ export default class ProductDetails {
 
         const productImage = document.getElementById("productImage");
         productImage.src = this.product.Images.PrimaryLarge;
+        productImage.sizes = "(max-width: 600px) 100vw, 500px";
+        productImage.srcset = `${this.product.Images.PrimarySmall} 80w, ${this.product.Images.PrimaryMedium} 160w, ${this.product.Images.PrimaryLarge} 320w, ${this.product.Images.PrimaryExtraLarge} 600w`;
         productImage.alt = this.product.NameWithoutBrand;
 
         document.querySelector(".product-card__price").textContent = "$" + this.product.FinalPrice;
